@@ -8,9 +8,9 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
-import "./layout.css"
+
+// import Header from "./header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,27 +24,18 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <div className="h-screen flex flex-col container mx-auto">
+      <Header className="h-14" />
+      <main className="flex-1 flex justify-center items-center">
+        {children}
+      </main>
+      <footer className="py-4 px-6 font-sans text-center text-sm border-t-2">
+        {" "}
+        WORDLE of the day is not assosiated with New York Times WORDLE game.
+        WORDLE of the day is only a small side project which I made as a proof
+        of concept.
+      </footer>
+    </div>
   )
 }
 
