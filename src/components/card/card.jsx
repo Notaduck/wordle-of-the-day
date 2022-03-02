@@ -12,10 +12,16 @@ export const Card = ({ character, id }) => {
       className="w-24 h-24 flex justify-center items-center text-gray-200"
       onClick={() => ref.current.toggle()}
     >
-      <FrontSide className="bg-gray-800 flex justify-center items-center text-3xl">
+      <FrontSide
+        style={{ background: "rgb(31 41 55)" }}
+        className="flex justify-center items-center text-3xl uppercase"
+      >
         ?
       </FrontSide>
-      <BackSide className="bg-[#6aaa64] flex justify-center items-center text-3xl">
+      <BackSide
+        style={{ background: "#6aaa64" }}
+        className="flex justify-center items-center text-3xl uppercase"
+      >
         {character}
       </BackSide>
     </Flippy>

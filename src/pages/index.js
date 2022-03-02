@@ -30,7 +30,8 @@ const IndexPage = ({ serverData }) => {
 export async function getServerData() {
   try {
     const res = await fetch(
-      `https://dreamy-heyrovsky-1b5acd.netlify.app/api/answer`
+      // `https://dreamy-heyrovsky-1b5acd.netlify.app/api/answer`
+      "http:/localhost:8000/api/answer"
     )
     if (!res.ok) {
       throw new Error(`Response failed`)

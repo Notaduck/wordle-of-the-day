@@ -1,6 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { ReactCardFlip } from "react-card-flip"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Card } from "../components/card/card"
@@ -32,7 +30,7 @@ export default UsingSSR
 
 export async function getServerData() {
   try {
-    const res = await fetch(`http://localhost:8000/api/answer`)
+    const res = await fetch("http:/localhost:8000/api/answer")
     if (!res.ok) {
       throw new Error(`Response failed`)
     }

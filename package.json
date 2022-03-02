@@ -23,7 +23,6 @@
     "gatsby-transformer-sharp": "^4.8.0",
     "postcss": "^8.4.7",
     "prop-types": "^15.8.0",
-    "puppeteer": "^13.4.1",
     "puppeteer-core": "^13.4.1",
     "react": "^17.0.1",
     "react-card-flip": "^1.1.5",
@@ -31,7 +30,8 @@
     "react-flippy": "^1.1.0",
     "react-helmet": "^6.1.0",
     "tailwindcss": "^3.0.23",
-    "utf-8-validate": "^5.0.8"
+    "utf-8-validate": "^5.0.8",
+    "puppeteer": "^13.4.1"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
