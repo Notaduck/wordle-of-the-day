@@ -27,5 +27,5 @@ jobs:
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
+      - name: Trigger deployment with doctl
         run: doctl app create-deployment ${{ DIGITIAL_OCEAN_APP_ID }}
-        
