@@ -19,7 +19,9 @@ export const useSolution = () => {
       setIsLoading(false)
     }
 
+    
     fetchData()
+    console.log('data', data)
   }, [setData])
 
   return {
