@@ -23,9 +23,12 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/wordle:latest
+  digitalocean:
+    runs-on: ubuntu-latest
+    steps:
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ secrets.DIGITIAL_OCEAN_ACCESS_KEY }}
+          token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
       - name: Trigger deployment with doctl
-        run: doctl app create-deployment ${{ secrets.DIGITIAL_OCEAN_APP_ID }}
+        run: doctl app create-deployment ${{ secretsDIGITIAL_OCEAN_APP_ID }}
