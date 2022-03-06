@@ -3,47 +3,37 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Card } from "../components/card/card"
 import { CardRow } from "../components/card/cardRow"
+import useSWR from "swr"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { nominalTypeHack } from "prop-types"
+import { useSolution } from "../hooks/useSolution"
 
-const IndexPage = ({ serverData }) => {
-  const solution = serverData.solution
+const IndexPage = () => {
+  const { data, isLoading, error } = useSolution()
+
+  if (error) <> {JSON.stringify(error)}</>
 
   return (
     <Layout>
       <Seo title="Using SSR" />
       <CardRow>
-        {solution.split("").map((data, idx) => {
-          return (
+        {isLoading ? (
+          <p> loading</p>
+        ) : (
+          data?.map((letter, index) => (
             <Card
-              character={data}
-              key={`charcter${idx}`}
-              id={`charcter${idx}`}
+            isLoading={isLoading}
+              letter={letter}
+              key={`letter-${letter}`}
+              id={`letter-${letter}`}
             />
-          )
-        })}
+          ))
+        )}
       </CardRow>
     </Layout>
   )
-}
-
-export async function getServerData() {
-  try {
-    const res = await fetch(`${process.env.GATSBY_API}/api/answer`)
-    if (!res.ok) {
-      throw new Error(`Response failed`)
-    }
-    return {
-      props: await res.json(),
-    }
-  } catch (error) {
-    return {
-      status: 500,
-      headers: {},
-      props: {},
-    }
-  }
 }
 
 export default IndexPage

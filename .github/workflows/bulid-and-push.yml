@@ -28,4 +28,4 @@ jobs:
         with:
           token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
       - name: Trigger deployment with doctl
-        run: doctl app create-deployment ${{ DIGITIAL_OCEAN_APP_ID }}
+        run: doctl app create-deployment ${{ secrets.DIGITIAL_OCEAN_APP_ID }}

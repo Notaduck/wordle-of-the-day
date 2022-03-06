@@ -1,7 +1,7 @@
 import React, { FC, useRef } from "react"
 import Flippy, { FrontSide, BackSide } from "react-flippy"
 
-export const Card = ({ character, id }) => {
+export const Card = ({ letter, isLoading, id }) => {
   const ref = useRef()
 
   return (
@@ -9,7 +9,7 @@ export const Card = ({ character, id }) => {
       flipOnClick={true}
       flipDirection="vertical"
       ref={ref}
-      className="w-24 h-24 flex justify-center items-center hover:cursor-pointer"
+      className={` ${ isLoading && 'animate-pulse'} w-24 h-24 flex justify-center items-center hover:cursor-pointer`}
       onClick={() => ref.current.toggle()}
     >
       <FrontSide
@@ -22,7 +22,7 @@ export const Card = ({ character, id }) => {
         style={{ background: "#6aaa64" }}
         className="flex justify-center items-center text-3xl uppercase text-gray-100"
       >
-        {character}
+        {letter}
       </BackSide>
     </Flippy>
   )
