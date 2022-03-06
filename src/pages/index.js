@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
 import { Card } from "../components/card/card"
 import { CardRow } from "../components/card/cardRow"
-import useSWR from "swr"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { nominalTypeHack } from "prop-types"
 import { useSolution } from "../hooks/useSolution"
 
 const IndexPage = () => {
