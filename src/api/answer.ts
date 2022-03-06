@@ -1,6 +1,4 @@
 const puppeteer = require("puppeteer")
-// const puppeteer = require("puppeteer-core")
-// const chromium = require("chrome-aws-lambda")
 
 const asyncTimeout = timeout =>
   new Promise(resolve => setTimeout(() => resolve(), timeout))
@@ -45,37 +43,3 @@ export default async function answer({ req, res }) {
   res.status(200).json({ solution })
   await browser.close()
 }
-
-// ----------
-
-// const chromium = require("chrome-aws-lambda")
-
-// export default async function answer({ req, res }) {
-//   const browser = await chromium.puppeteer.launch({
-//     executablePath: await chromium.executablePath,
-//     args: chromium.args,
-//     defaultViewport: chromium.defaultViewport,
-//     headless: chromium.headless,
-//   })
-//   const page = await browser.newPage()
-
-//   await page.setViewport({
-//     width: 540,
-//     height: 800,
-//   })
-
-//   await page.emulateTimezone("GMT")
-
-//   await page.goto("https://www.powerlanguage.co.uk/wordle/", {
-//     waitUntil: "networkidle2",
-//   })
-//   await clickModalCloseButton(page)
-
-//   const localStorage = JSON.parse(
-//     await page.evaluate(() => JSON.stringify(window.localStorage))
-//   )
-
-//   let solution = JSON.parse(localStorage["nyt-wordle-state"]).solution
-//   res.status(200).json({ solution })
-//   await browser.close()
-// }

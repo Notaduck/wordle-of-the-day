@@ -3114,13 +3114,6 @@ chownr@^1.1.1:
   resolved "https://registry.npmjs.org/chownr/-/chownr-1.1.4.tgz"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-chrome-aws-lambda@^10.1.0:
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-10.1.0.tgz#ac43b4cdfc1fbb2275c62effada560858099501e"
-  integrity sha512-NZQVf+J4kqG4sVhRm3WNmOfzY0OtTSm+S8rg77pwePa9RCYHzhnzRs8YvNI6L9tALIW6RpmefWiPURt3vURXcw==
-  dependencies:
-    lambdafs "^2.0.3"
-
 chrome-trace-event@^1.0.2:
   version "1.0.3"
   resolved "https://registry.npmjs.org/chrome-trace-event/-/chrome-trace-event-1.0.3.tgz"
@@ -7042,13 +7035,6 @@ klona@^2.0.4:
   resolved "https://registry.npmjs.org/klona/-/klona-2.0.5.tgz"
   integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
 
-lambdafs@^2.0.3:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/lambdafs/-/lambdafs-2.1.1.tgz#4bf8d3037b6c61bbb4a22ab05c73ee47964c25ed"
-  integrity sha512-x5k8JcoJWkWLvCVBzrl4pzvkEHSgSBqFjg3Dpsc4AcTMq7oUMym4cL/gRTZ6VM4mUMY+M0dIbQ+V1c1tsqqanQ==
-  dependencies:
-    tar-fs "^2.1.1"
-
 language-subtag-registry@~0.3.2:
   version "0.3.21"
   resolved "https://registry.npmjs.org/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz"
@@ -8917,24 +8903,6 @@ pupa@^2.1.1:
   integrity sha512-l1jNAspIBSFqbT+y+5FosojNpVpF94nlI+wDUpqP9enwOTfHx9f0gh5nB96vl+6yTpsJsypeNrwfzPrKuHB41A==
   dependencies:
     escape-goat "^2.0.0"
-
-puppeteer-core@^13.4.1:
-  version "13.4.1"
-  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-13.4.1.tgz#623c8adb13b199f0873188cd6e99105f9bd3646c"
-  integrity sha512-AgRIWgIkUXXnbvoRhyveZnyoEYr3wTunSk2/evOfWvFs65GUzsrxnUTUSLgPM4MRshCQmRABW7qE1hDN1AD7nA==
-  dependencies:
-    cross-fetch "3.1.5"
-    debug "4.3.3"
-    devtools-protocol "0.0.960912"
-    extract-zip "2.0.1"
-    https-proxy-agent "5.0.0"
-    pkg-dir "4.2.0"
-    progress "2.0.3"
-    proxy-from-env "1.1.0"
-    rimraf "3.0.2"
-    tar-fs "2.1.1"
-    unbzip2-stream "1.4.3"
-    ws "8.5.0"
 
 puppeteer@^13.4.1:
   version "13.4.1"

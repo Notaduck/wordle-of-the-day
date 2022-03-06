@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Card } from "../components/card/card"
@@ -9,6 +9,7 @@ import Seo from "../components/seo"
 
 const IndexPage = ({ serverData }) => {
   const solution = serverData.solution
+
   return (
     <Layout>
       <Seo title="Using SSR" />
@@ -29,10 +30,7 @@ const IndexPage = ({ serverData }) => {
 
 export async function getServerData() {
   try {
-    const res = await fetch(
-      // `https://dreamy-heyrovsky-1b5acd.netlify.app/api/answer`
-      "http:/localhost:8000/api/answer"
-    )
+    const res = await fetch(`${process.env.GATSBY_API}/api/answer`)
     if (!res.ok) {
       throw new Error(`Response failed`)
     }
