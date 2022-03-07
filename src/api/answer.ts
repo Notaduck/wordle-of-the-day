@@ -17,6 +17,7 @@ const clickModalCloseButton = async page => {
 }
 
 export default async function answer({ req, res }) {
+<<<<<<< HEAD
   // const browser = await puppeteer.launch({
   //   headless: true,
   //   executablePath: process.env.CHROMIUM_PATH,
@@ -44,6 +45,14 @@ export default async function answer({ req, res }) {
     });
     
 
+=======
+  const browser = await puppeteer.launch({
+    executablePath: process.env.CHROME_BIN || null,
+    args: ['--no-sandbox', '--headless', '--disable-gpu', "--disable-setuid-sandbox"],
+    headless: true,
+    ignoreDefaultArgs: ["--disable-extensions"], // this made it work for now
+  })
+>>>>>>> 777233555abfb9a08f5dfa7794ef0b4db07565d8
   const page = await browser.newPage()
 
   // await page.setViewport({
